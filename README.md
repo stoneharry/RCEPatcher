@@ -10,3 +10,7 @@ If the patched file already exists or the executable is already patched, then th
 You can get output by running the program from command prompt.
 
 ![screenshot](https://i.imgur.com/NmsPYGm.png)
+
+When running the patched executable, the client will crash when a server tries to use the exploit:
+
+![crash](https://i.imgur.com/Fg4UpNR.png)
