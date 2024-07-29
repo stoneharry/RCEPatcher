@@ -3,7 +3,7 @@ In the 3.3.5a WoW WOTLK client there is a Remote Code Exploit (RCE) that allows 
 
 The program can be downloaded from the releases.
 
-Simply drag and drop your `WoW.exe` game file onto the `RCEPatcher.exe`. This will work for servers with custom executables too. It creates a copy of the file with the file name ending in `_patched.exe`, i.e: `WoW.exe` would be patched to `WoW_patched.exe`.
+Simply drag and drop your `WoW.exe` game file onto the `RCEPatcher.exe`. This will work for servers with custom executables too. It creates a copy of the file with the file name ending in `_RCE_fix.exe`, i.e: `WoW.exe` would be patched to `WoW_RCE_fix.exe`.
 
 If the patched file already exists or the executable is already patched, then the program will do nothing.
 
