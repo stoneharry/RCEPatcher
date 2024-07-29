@@ -13,7 +13,8 @@ namespace RCEPatcher
         {
             if (args.Length == 0)
             {
-                Console.WriteLine("[ERROR] Input your WoW.exe file path to patch.");
+                Console.WriteLine("[ERROR] Input your WoW.exe file path to patch. If you are unsure how to use this, drag and drop your WoW.exe onto this program in explorer.\nPress any key to exit.");
+                Console.ReadKey();
                 return;
             }
 
@@ -22,30 +23,35 @@ namespace RCEPatcher
             {
                 if (!File.Exists(filePath))
                 {
-                    Console.WriteLine("[ERROR] Unable to find file: " + filePath);
+                    Console.WriteLine("[ERROR] Unable to find file: " + filePath + "\nPress any key to exit.");
+                    Console.ReadKey();
                     return;
                 }
 
                 if (IsPatchedExe(filePath))
                 {
-                    Console.WriteLine("[COMPLETE] File is already patched: " + filePath);
+                    Console.WriteLine("[COMPLETE] File is already patched: " + filePath + "\nPress any key to exit.");
+                    Console.ReadKey();
                     return;
                 }
 
                 string newPath = GetNewPath(filePath);
                 if (File.Exists(newPath))
                 {
-                    Console.WriteLine("[ERROR] File already exists: " + newPath);
+                    Console.WriteLine("[ERROR] File already exists: " + newPath + "\nPress any key to exit.");
+                    Console.ReadKey();
                     return;
                 }
 
                 PatchExe(filePath, newPath);
 
-                Console.WriteLine("[COMPLETE] Created patched executable: " + newPath);
+                Console.WriteLine("[COMPLETE] Created patched executable: " + newPath + "\nPress any key to exit.");
+                Console.ReadKey();
             }
             catch (Exception exception)
             {
-                Console.WriteLine($"[ERROR] Unexpected: {exception.Message}, {exception}\n{exception.StackTrace}");
+                Console.WriteLine($"[ERROR] Unexpected: {exception.Message}, {exception}\n{exception.StackTrace}\nPress any key to exit.");
+                Console.ReadKey();
             }
         }
 
@@ -76,7 +82,7 @@ namespace RCEPatcher
             string fileName = Path.GetFileNameWithoutExtension(filePath);
             string directory = Path.GetDirectoryName(filePath) ?? string.Empty;
             string seperator = directory.Length > 0 ? Path.DirectorySeparatorChar.ToString() : string.Empty;
-            return $"{directory}{seperator}{fileName}_patched.exe";
+            return $"{directory}{seperator}{fileName}_RCE_fix.exe";
         }
     }
 }

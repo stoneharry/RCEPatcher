@@ -4,7 +4,7 @@
     <OutputType>Exe</OutputType>
     <StartupObject>RCEPatcher.Program</StartupObject>
     <ApplicationIcon>resources\icon.ico</ApplicationIcon>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
